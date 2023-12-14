@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<!-- Empty favicon, just to skip unnecessary request -->
+	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+	<!-- Editor styles -->
+	<link rel="stylesheet" href="/ckeditor.css">
+</head>
+<body>
+
+	<!-- Editor content -->
+	<div id="editor">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vel dui a nisi imperdiet molestie. Vivamus in magna
+		cursus, consequat augue in, dictum est. Vivamus tincidunt ipsum purus, nec rhoncus ligula vulputate at. Nunc condimentum
+		lorem nibh, non pulvinar tortor pulvinar et. Ut pretium ligula erat, vel lobortis dolor scelerisque quis. Integer ut
+		ligula porta, suscipit tellus quis, gravida sapien. Cras in elit nunc. Maecenas maximus nisi tellus, sit amet vehicula
+		ipsum eleifend congue. Ut placerat condimentum nunc, in aliquet libero elementum a.
+	</div>
+
+	<!-- Importmap including ckeditor5 -->
+	<script type="importmap">
+		{
+			"imports": {
+				"ckeditor5": "/ckeditor.browser.js"
+			}
+		}
+	</script>
+
+	<!-- Editor initialization code -->
+	<script type="module">
+		import { ClassicEditor, Essentials, Paragraph } from 'ckeditor5';
+		import { Highlight } from './custom-plugin.js';
+
+		await ClassicEditor.create( document.querySelector( '#editor' ), {
+			plugins: [
+				Essentials,
+				Paragraph,
+				Highlight
+			],
+			toolbar: [
+				'undo',
+				'redo',
+				'highlight'
+			]
+		} );
+	</script>
+</body>
+</html>
