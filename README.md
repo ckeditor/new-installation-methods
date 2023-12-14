@@ -21,7 +21,7 @@ To run the demo:
 
 ## `browser` folder
 
-The `browser` folder contains minimal setup using our CDN/browser build. It also registers a custom plugin from our [Crash course](https://ckeditor.com/docs/ckeditor5/latest/tutorials/crash-course/editor.html) to show how you might be able to use CKEditor without the build step.
+The `browser` folder contains a minimal setup using our CDN/browser build. It also registers a custom plugin from our [Crash Course](https://ckeditor.com/docs/ckeditor5/latest/tutorials/crash-course/editor.html) to show how you might be able to use CKEditor without the build step.
 
 To run the demo:
 
