@@ -16,7 +16,7 @@ export function Highlight( editor ) {
 		const button = new ButtonView( locale );
 		const command = editor.commands.get( 'highlight' );
 		const t = editor.t;
-		
+
 		button.set( {
 			label: t( 'Highlight' ),
 			withText: true,
@@ -24,14 +24,14 @@ export function Highlight( editor ) {
 			isToggleable: true,
 			keystroke: 'Ctrl+Alt+H'
 		} );
-		
+
 		button.on( 'execute', () => {
 			editor.execute( 'highlight' );
 			editor.editing.view.focus();
 		} );
-		
+
 		button.bind( 'isOn', 'isEnabled' ).to( command, 'value', 'isEnabled' );
-		
+
 		return button;
 	} );
 
@@ -53,11 +53,11 @@ class HighlightCommand extends Command {
 		const model = this.editor.model;
 		const selection = model.document.selection;
 		const newValue = !this.value;
-		
+
 		model.change( ( writer ) => {
 			if ( !selection.isCollapsed ) {
 				const ranges = model.schema.getValidRanges( selection.getRanges(), 'highlight' );
-				
+
 				for ( const range of ranges ) {
 					if ( newValue ) {
 						writer.setAttribute( 'highlight', newValue, range );
@@ -66,11 +66,11 @@ class HighlightCommand extends Command {
 					}
 				}
 			}
-			
+
 			if ( newValue ) {
 				return writer.setSelectionAttribute( 'highlight', true );
 			}
-			
+
 			return writer.removeSelectionAttribute( 'highlight' );
 		} );
 	}
