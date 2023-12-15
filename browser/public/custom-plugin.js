@@ -6,17 +6,17 @@ export function Highlight( editor ) {
 	} );
 
 	editor.conversion.attributeToElement( {
-    model: 'highlight',
-    view: 'mark'
+		model: 'highlight',
+		view: 'mark'
 	} );
 
 	editor.commands.add( 'highlight', new HighlightCommand( editor ) );
 
 	editor.ui.componentFactory.add( 'highlight', ( locale ) => {
-    const button = new ButtonView( locale );
-    const command = editor.commands.get( 'highlight' );
-    const t = editor.t;
-
+		const button = new ButtonView( locale );
+		const command = editor.commands.get( 'highlight' );
+		const t = editor.t;
+		
 		button.set( {
 			label: t( 'Highlight' ),
 			withText: true,
@@ -24,15 +24,15 @@ export function Highlight( editor ) {
 			isToggleable: true,
 			keystroke: 'Ctrl+Alt+H'
 		} );
-
-    button.on( 'execute', () => {
+		
+		button.on( 'execute', () => {
 			editor.execute( 'highlight' );
 			editor.editing.view.focus();
-    } );
-
-    button.bind( 'isOn', 'isEnabled' ).to( command, 'value', 'isEnabled' );
-
-    return button;
+		} );
+		
+		button.bind( 'isOn', 'isEnabled' ).to( command, 'value', 'isEnabled' );
+		
+		return button;
 	} );
 
 	editor.keystrokes.set( 'Ctrl+Alt+H', 'highlight' );
@@ -50,14 +50,14 @@ class HighlightCommand extends Command {
 	}
 
 	execute() {
-    const model = this.editor.model;
-    const selection = model.document.selection;
-    const newValue = !this.value;
-
-    model.change( ( writer ) => {
+		const model = this.editor.model;
+		const selection = model.document.selection;
+		const newValue = !this.value;
+		
+		model.change( ( writer ) => {
 			if ( !selection.isCollapsed ) {
 				const ranges = model.schema.getValidRanges( selection.getRanges(), 'highlight' );
-
+				
 				for ( const range of ranges ) {
 					if ( newValue ) {
 						writer.setAttribute( 'highlight', newValue, range );
@@ -66,12 +66,12 @@ class HighlightCommand extends Command {
 					}
 				}
 			}
-
+			
 			if ( newValue ) {
 				return writer.setSelectionAttribute( 'highlight', true );
 			}
-
+			
 			return writer.removeSelectionAttribute( 'highlight' );
-    } );
+		} );
 	}
 }
