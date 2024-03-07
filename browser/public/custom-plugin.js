@@ -6,16 +6,16 @@ export function Highlight( editor ) {
 	} );
 
 	editor.conversion.attributeToElement( {
-    model: 'highlight',
-    view: 'mark'
+		model: 'highlight',
+		view: 'mark'
 	} );
 
 	editor.commands.add( 'highlight', new HighlightCommand( editor ) );
 
 	editor.ui.componentFactory.add( 'highlight', ( locale ) => {
-    const button = new ButtonView( locale );
-    const command = editor.commands.get( 'highlight' );
-    const t = editor.t;
+		const button = new ButtonView( locale );
+		const command = editor.commands.get( 'highlight' );
+		const t = editor.t;
 
 		button.set( {
 			label: t( 'Highlight' ),
@@ -25,14 +25,14 @@ export function Highlight( editor ) {
 			keystroke: 'Ctrl+Alt+H'
 		} );
 
-    button.on( 'execute', () => {
+		button.on( 'execute', () => {
 			editor.execute( 'highlight' );
 			editor.editing.view.focus();
-    } );
+		} );
 
-    button.bind( 'isOn', 'isEnabled' ).to( command, 'value', 'isEnabled' );
+		button.bind( 'isOn', 'isEnabled' ).to( command, 'value', 'isEnabled' );
 
-    return button;
+		return button;
 	} );
 
 	editor.keystrokes.set( 'Ctrl+Alt+H', 'highlight' );
@@ -50,11 +50,11 @@ class HighlightCommand extends Command {
 	}
 
 	execute() {
-    const model = this.editor.model;
-    const selection = model.document.selection;
-    const newValue = !this.value;
+		const model = this.editor.model;
+		const selection = model.document.selection;
+		const newValue = !this.value;
 
-    model.change( ( writer ) => {
+		model.change( ( writer ) => {
 			if ( !selection.isCollapsed ) {
 				const ranges = model.schema.getValidRanges( selection.getRanges(), 'highlight' );
 
@@ -72,6 +72,6 @@ class HighlightCommand extends Command {
 			}
 
 			return writer.removeSelectionAttribute( 'highlight' );
-    } );
+		} );
 	}
 }
