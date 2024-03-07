@@ -6,7 +6,7 @@
 import {
 	ClassicEditor,
 	Essentials,
-	UploadAdapter,
+	CKFinderUploadAdapter,
 	Autoformat,
 	Bold,
 	Italic,
@@ -33,12 +33,12 @@ import {
 	CloudServices
 } from 'ckeditor5';
 
-import 'ckeditor5/dist/styles.css';
+import 'ckeditor5/dist/index.bundled.css';
 
 ClassicEditor.create( document.querySelector('#editor'), {
 	plugins: [
 		Essentials,
-		UploadAdapter,
+		CKFinderUploadAdapter,
 		Autoformat,
 		Bold,
 		Italic,

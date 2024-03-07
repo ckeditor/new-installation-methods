@@ -9,7 +9,7 @@
 	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
 
 	<!-- Editor styles -->
-	<link rel="stylesheet" href="/ckeditor.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ckeditor5@alpha/dist/index.browser.css">
 </head>
 <body>
 
@@ -26,27 +26,32 @@
 	<script type="importmap">
 		{
 			"imports": {
-				"ckeditor5": "/ckeditor.browser.js"
+				"ckeditor5": "https://cdn.jsdelivr.net/npm/ckeditor5@alpha/dist/index.browser.js",
+				"ckeditor5/": "https://cdn.jsdelivr.net/npm/ckeditor5@alpha/"
 			}
 		}
 	</script>
 
 	<!-- Editor initialization code -->
 	<script type="module">
-		import { ClassicEditor, Essentials, Paragraph } from 'ckeditor5';
+		import { ClassicEditor, Essentials, Bold, Paragraph } from 'ckeditor5';
+		import translations from "ckeditor5/dist/translations/pl.js";
 		import { Highlight } from './custom-plugin.js';
 
 		await ClassicEditor.create( document.querySelector( '#editor' ), {
 			plugins: [
 				Essentials,
 				Paragraph,
+				Bold,
 				Highlight
 			],
 			toolbar: [
 				'undo',
 				'redo',
+				'bold',
 				'highlight'
-			]
+			],
+			translations
 		} );
 	</script>
 </body>
