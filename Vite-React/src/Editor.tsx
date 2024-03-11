@@ -77,6 +77,17 @@ export function Editor() {
                 "indent",
               ],
             },
+            image: {
+              toolbar: [
+                "imageStyle:block",
+                "imageStyle:side",
+                "|",
+                "toggleImageCaption",
+                "imageTextAlternative",
+                "|",
+                "linkImage",
+              ],
+            },
           }}
           onReady={() => {
             console.log("event: onReady");
