@@ -10,6 +10,7 @@
 
 	<!-- Editor styles -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ckeditor5@alpha/dist/browser/index.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ckeditor5-premium-features@alpha/dist/browser/index.css">
 </head>
 <body>
 
@@ -26,7 +27,8 @@
 	<script type="importmap">
 		{
 			"imports": {
-				"ckeditor5": "https://cdn.jsdelivr.net/npm/ckeditor5@alpha/dist/browser/index.js"
+				"ckeditor5": "https://cdn.jsdelivr.net/npm/ckeditor5@alpha/dist/browser/index.js",
+				"ckeditor5-premium-features": "https://cdn.jsdelivr.net/npm/ckeditor5-premium-features@alpha/dist/browser/index.js"
 			}
 		}
 	</script>
@@ -60,8 +62,10 @@
 			Table,
 			TableToolbar,
 			TextTransformation,
-			CloudServices
+			CloudServices,
+			Mention
 		} from 'ckeditor5';
+		import { CaseChange, SlashCommand } from 'ckeditor5-premium-features';
 
 		import { Highlight } from './custom-plugin.js';
 
@@ -93,9 +97,14 @@
 				Table,
 				TableToolbar,
 				TextTransformation,
+				Mention,
+				
+				CaseChange,
+				SlashCommand,
 
 				Highlight
 			],
+			licenseKey: '<LICENSE_KEY>', // Replace this with your license key.
 			toolbar: {
 				items: [
 					'undo', 'redo',
@@ -103,7 +112,10 @@
 					'|', 'bold', 'italic',
 					'|', 'link', 'uploadImage', 'insertTable', 'blockQuote', 'mediaEmbed',
 					'|', 'bulletedList', 'numberedList', 'outdent', 'indent',
-					'|', 'highlight'
+
+					'|', 'caseChange',
+
+					'|', 'highlight',
 				]
 			},
 			image: {
