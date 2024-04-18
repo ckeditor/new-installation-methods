@@ -10,6 +10,7 @@
 
 	<!-- Editor styles -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ckeditor5@alpha/dist/browser/index.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ckeditor5-premium-features@alpha/dist/browser/index.css">
 </head>
 <body>
 
@@ -22,18 +23,12 @@
 		ipsum eleifend congue. Ut placerat condimentum nunc, in aliquet libero elementum a.
 	</div>
 
-	<!-- Importmap including ckeditor5 -->
-	<script type="importmap">
-		{
-			"imports": {
-				"ckeditor5": "https://cdn.jsdelivr.net/npm/ckeditor5@alpha/dist/browser/index.js"
-			}
-		}
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/ckeditor5@alpha/dist/browser/index.umd.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/ckeditor5-premium-features@alpha/dist/browser/index.umd.js"></script>
 
 	<!-- Editor initialization code -->
-	<script type="module">
-		import {
+	<script>
+		const {
 			ClassicEditor,
 			Essentials,
 			CKFinderUploadAdapter,
@@ -60,10 +55,10 @@
 			Table,
 			TableToolbar,
 			TextTransformation,
-			CloudServices
-		} from 'ckeditor5';
-
-		import { Highlight } from './custom-plugin.js';
+			CloudServices,
+			Mention
+		} = window['ckeditor5'];
+		const { CaseChange, SlashCommand } = window['ckeditor5-premium-features'];
 
 		ClassicEditor.create( document.querySelector( '#editor' ), {
 			plugins: [
@@ -93,9 +88,12 @@
 				Table,
 				TableToolbar,
 				TextTransformation,
-
-				Highlight
+				Mention,
+				
+				CaseChange,
+				SlashCommand
 			],
+			licenseKey: '<LICENSE_KEY>', // Replace this with your license key.
 			toolbar: {
 				items: [
 					'undo', 'redo',
@@ -103,7 +101,8 @@
 					'|', 'bold', 'italic',
 					'|', 'link', 'uploadImage', 'insertTable', 'blockQuote', 'mediaEmbed',
 					'|', 'bulletedList', 'numberedList', 'outdent', 'indent',
-					'|', 'highlight'
+
+					'|', 'caseChange',
 				]
 			},
 			image: {

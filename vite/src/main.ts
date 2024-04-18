@@ -39,7 +39,7 @@ import { CaseChange, SlashCommand } from 'ckeditor5-premium-features';
 import 'ckeditor5/dist/index.css';
 import 'ckeditor5-premium-features/dist/index.css';
 
-ClassicEditor.create( document.querySelector( '#editor' ), {
+ClassicEditor.create( document.querySelector( '#editor' ) as HTMLElement, {
 	plugins: [
 		Essentials,
 		CKFinderUploadAdapter,
