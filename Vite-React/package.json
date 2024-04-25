@@ -1,5 +1,5 @@
 {
-  "name": "alpha-check-react",
+  "name": "vite-react-example",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@ckeditor/ckeditor5-react": "^6.2.0",
-    "ckeditor5": "^41.3.0-alpha.1",
+    "ckeditor5": "nightly",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

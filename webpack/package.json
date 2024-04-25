@@ -16,7 +16,7 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
-    "ckeditor5": "^41.4.0-alpha.0",
-    "ckeditor5-premium-features": "^41.4.0-alpha.0"
+    "ckeditor5": "nightly",
+    "ckeditor5-premium-features": "nightly"
   }
 }

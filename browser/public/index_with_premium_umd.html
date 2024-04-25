@@ -3,14 +3,14 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>UMD Browser example - core + premium</title>
 
 	<!-- Empty favicon, just to skip unnecessary request -->
 	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
 
 	<!-- Editor styles -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ckeditor5@alpha/dist/browser/index.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ckeditor5-premium-features@alpha/dist/browser/index.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ckeditor5@nightly/dist/browser/index.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ckeditor5-premium-features@nightly/dist/browser/index.css">
 </head>
 <body>
 
@@ -23,8 +23,13 @@
 		ipsum eleifend congue. Ut placerat condimentum nunc, in aliquet libero elementum a.
 	</div>
 
-	<script src="https://cdn.jsdelivr.net/npm/ckeditor5@alpha/dist/browser/index.umd.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/ckeditor5-premium-features@alpha/dist/browser/index.umd.js"></script>
+	<!-- Editor code -->
+	<script src="https://cdn.jsdelivr.net/npm/ckeditor5@nightly/dist/browser/index.umd.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/ckeditor5-premium-features@nightly/dist/browser/index.umd.js"></script>
+
+	<!-- Editor translations -->
+	<script src="https://cdn.jsdelivr.net/npm/ckeditor5@nightly/dist/translations/pl.umd.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/ckeditor5-premium-features@nightly/dist/translations/pl.umd.js"></script>
 
 	<!-- Editor initialization code -->
 	<script>
@@ -122,7 +127,7 @@
 					'mergeTableCells'
 				]
 			},
-			language: 'en'
+			language: 'pl'
 		} );
 	</script>
 </body>

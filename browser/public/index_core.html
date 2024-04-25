@@ -3,14 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>ESM browser example - core + premium</title>
+	<title>ESM browser example - core</title>
 
 	<!-- Empty favicon, just to skip unnecessary request -->
 	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
 
 	<!-- Editor styles -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ckeditor5@nightly/dist/browser/index.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ckeditor5-premium-features@nightly/dist/browser/index.css">
 </head>
 <body>
 
@@ -28,9 +27,7 @@
 		{
 			"imports": {
 				"ckeditor5": "https://cdn.jsdelivr.net/npm/ckeditor5@nightly/dist/browser/index.js",
-				"ckeditor5/": "https://cdn.jsdelivr.net/npm/ckeditor5@nightly/dist/",
-				"ckeditor5-premium-features": "https://cdn.jsdelivr.net/npm/ckeditor5-premium-features@nightly/dist/browser/index.js",
-				"ckeditor5-premium-features/": "https://cdn.jsdelivr.net/npm/ckeditor5-premium-features@nightly/dist/"
+				"ckeditor5/": "https://cdn.jsdelivr.net/npm/ckeditor5@nightly/dist/"
 			}
 		}
 	</script>
@@ -64,13 +61,10 @@
 			Table,
 			TableToolbar,
 			TextTransformation,
-			CloudServices,
-			Mention
+			CloudServices
 		} from 'ckeditor5';
-		import { CaseChange, SlashCommand } from 'ckeditor5-premium-features';
 
-		import coreTranslations from 'ckeditor5/translations/pl.js';
-		import commercialTranslations from 'ckeditor5-premium-features/translations/pl.js';
+		import translations from 'ckeditor5/translations/pl.js';
 
 		import { Highlight } from './custom-plugin.js';
 
@@ -102,14 +96,9 @@
 				Table,
 				TableToolbar,
 				TextTransformation,
-				Mention,
-				
-				CaseChange,
-				SlashCommand,
 
 				Highlight
 			],
-			licenseKey: '<LICENSE_KEY>', // Replace this with your license key.
 			toolbar: {
 				items: [
 					'undo', 'redo',
@@ -117,10 +106,7 @@
 					'|', 'bold', 'italic',
 					'|', 'link', 'uploadImage', 'insertTable', 'blockQuote', 'mediaEmbed',
 					'|', 'bulletedList', 'numberedList', 'outdent', 'indent',
-
-					'|', 'caseChange',
-
-					'|', 'highlight',
+					'|', 'highlight'
 				]
 			},
 			image: {
@@ -140,11 +126,8 @@
 					'mergeTableCells'
 				]
 			},
-			translations: [
-				coreTranslations,
-				commercialTranslations
-			],
-			language: 'en'
+			language: 'en',
+			translations
 		} );
 	</script>
 </body>

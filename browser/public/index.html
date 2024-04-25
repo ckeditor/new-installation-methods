@@ -3,128 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-
-	<!-- Empty favicon, just to skip unnecessary request -->
-	<link rel="icon" href="data:;base64,iVBORw0KGgo=">
-
-	<!-- Editor styles -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ckeditor5@alpha/dist/browser/index.css">
+	<title>Browser examples</title>
 </head>
 <body>
-
-	<!-- Editor content -->
-	<div id="editor">
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vel dui a nisi imperdiet molestie. Vivamus in magna
-		cursus, consequat augue in, dictum est. Vivamus tincidunt ipsum purus, nec rhoncus ligula vulputate at. Nunc condimentum
-		lorem nibh, non pulvinar tortor pulvinar et. Ut pretium ligula erat, vel lobortis dolor scelerisque quis. Integer ut
-		ligula porta, suscipit tellus quis, gravida sapien. Cras in elit nunc. Maecenas maximus nisi tellus, sit amet vehicula
-		ipsum eleifend congue. Ut placerat condimentum nunc, in aliquet libero elementum a.
+	<div style="display: flex; flex-direction: column; gap: 12px;">
+		<a href="./index_core.html">Core</a>
+		<a href="./index_with_premium.html">Core + Premium</a>
+		<a href="./index_with_premium_umd.html">Core + Premium (UMD)</a>
 	</div>
-
-	<!-- Importmap including ckeditor5 -->
-	<script type="importmap">
-		{
-			"imports": {
-				"ckeditor5": "https://cdn.jsdelivr.net/npm/ckeditor5@alpha/dist/browser/index.js"
-			}
-		}
-	</script>
-
-	<!-- Editor initialization code -->
-	<script type="module">
-		import {
-			ClassicEditor,
-			Essentials,
-			CKFinderUploadAdapter,
-			Autoformat,
-			Bold,
-			Italic,
-			BlockQuote,
-			CKBox,
-			CKFinder,
-			EasyImage,
-			Heading,
-			Image,
-			ImageCaption,
-			ImageStyle,
-			ImageToolbar,
-			ImageUpload,
-			PictureEditing,
-			Indent,
-			Link,
-			List,
-			MediaEmbed,
-			Paragraph,
-			PasteFromOffice,
-			Table,
-			TableToolbar,
-			TextTransformation,
-			CloudServices
-		} from 'ckeditor5';
-
-		import { Highlight } from './custom-plugin.js';
-
-		ClassicEditor.create( document.querySelector( '#editor' ), {
-			plugins: [
-				Essentials,
-				CKFinderUploadAdapter,
-				Autoformat,
-				Bold,
-				Italic,
-				BlockQuote,
-				CKBox,
-				CKFinder,
-				CloudServices,
-				EasyImage,
-				Heading,
-				Image,
-				ImageCaption,
-				ImageStyle,
-				ImageToolbar,
-				ImageUpload,
-				Indent,
-				Link,
-				List,
-				MediaEmbed,
-				Paragraph,
-				PasteFromOffice,
-				PictureEditing,
-				Table,
-				TableToolbar,
-				TextTransformation,
-
-				Highlight
-			],
-			toolbar: {
-				items: [
-					'undo', 'redo',
-					'|', 'heading',
-					'|', 'bold', 'italic',
-					'|', 'link', 'uploadImage', 'insertTable', 'blockQuote', 'mediaEmbed',
-					'|', 'bulletedList', 'numberedList', 'outdent', 'indent',
-					'|', 'highlight'
-				]
-			},
-			image: {
-				toolbar: [
-					'imageStyle:inline',
-					'imageStyle:block',
-					'imageStyle:side',
-					'|',
-					'toggleImageCaption',
-					'imageTextAlternative'
-				]
-			},
-			table: {
-				contentToolbar: [
-					'tableColumn',
-					'tableRow',
-					'mergeTableCells'
-				]
-			},
-			language: 'en'
-		} );
-	</script>
 </body>
 </html>
