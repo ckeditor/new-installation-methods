@@ -106,5 +106,5 @@ ClassicEditor.create( document.querySelector( '#editor' ), {
 		coreTranslations,
 		commercialTranslations
 	],
-	language: 'en'
+	language: 'pl'
 } );

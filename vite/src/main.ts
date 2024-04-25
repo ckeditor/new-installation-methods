@@ -106,5 +106,5 @@ ClassicEditor.create( document.querySelector( '#editor' ) as HTMLElement, {
 		coreTranslations,
 		commercialTranslations
 	],
-	language: 'en'
+	language: 'pl'
 } );
