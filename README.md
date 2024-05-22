@@ -12,6 +12,10 @@ To run the demo:
 2. Run `yarn` to install all dependencies.
 3. Run `yarn dev` to run the development environment or `yarn build` to build the project.
 
+> [!IMPORTANT]  
+> If you use `npm` in the React example, make sure to install with `--legacy-peer-deps` flag, otherwise wrong dependencies may be pulled.
+
+
 ## `browser` folder
 
 The `browser` folder contains a minimal setup using our CDN/browser build. It also registers a custom plugin from our [Crash Course](https://ckeditor.com/docs/ckeditor5/latest/tutorials/crash-course/editor.html) to show how you might be able to use CKEditor without the build step.
