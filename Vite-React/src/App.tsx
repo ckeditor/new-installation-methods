@@ -1,5 +1,5 @@
 import "./App.css";
-import "ckeditor5/index.css";
+import "ckeditor5/ckeditor5.css";
 import { Editor } from "./Editor.tsx";
 
 function App() {

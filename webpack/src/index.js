@@ -39,8 +39,8 @@ import { CaseChange, SlashCommand } from 'ckeditor5-premium-features';
 import coreTranslations from 'ckeditor5/translations/pl.js';
 import commercialTranslations from 'ckeditor5-premium-features/translations/pl.js';
 
-import 'ckeditor5/index.css';
-import 'ckeditor5-premium-features/index.css';
+import 'ckeditor5/ckeditor5.css';
+import 'ckeditor5-premium-features/ckeditor5-premium-features.css';
 
 ClassicEditor.create( document.querySelector( '#editor' ), {
 	plugins: [
