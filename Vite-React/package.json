@@ -10,8 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@ckeditor/ckeditor5-react": "^6.2.0",
-    "ckeditor5": "nightly",
+    "@ckeditor/ckeditor5-react": "^8.0.0",
+    "ckeditor5": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
